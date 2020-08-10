@@ -1082,4 +1082,32 @@ console.log(String(obj)); // => "[object Object]"
 
 ##### オブジェクトのマージと複製
 
-* 
+* Object.assignメソッドはあるオブジェクトを別のオブジェクトに代入するメソッド
+    * 具体例は以下
+
+```
+const objectA = { a: "a" };
+const objectB = { b: "b" };
+# ObjectAとobjectBをマージしたものが、Object.assignメソッドの返り値
+const merged = Object.assign({}, objectA, objectB);
+console.log(merged); // => { a: "a", b: "b" }
+```
+
+* オブジェクトのspread構文でのマージ
+    * 実務でも一度使ったことがあるので、ここでしっかり覚えておきたい
+        * オブジェクトのspread構文は、Object.assignとは異なり必ず新しいオブジェクトを作成
+
+```
+const objectA = { a: "a" };
+const objectB = { b: "b" };
+const merged = { 
+    ...objectA,
+    ...objectB
+};
+console.log(merged); // => { a: "a", b: "b" }
+```
+
+##### まとめ
+
+* オブジェクトについて様々なことを学んだ
+    * 覚えることが多く一度で理解は難しいので、概要程度に留めておき、必要に応じて再度調べる
